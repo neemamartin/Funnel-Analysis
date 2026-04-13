@@ -240,7 +240,7 @@ Search experience on desktop is a **critical failure point**
 <img width="698" height="395" alt="image" src="https://github.com/user-attachments/assets/5a362420-6302-4aa7-b1b7-fa49607733aa" />
 <img width="695" height="391" alt="image" src="https://github.com/user-attachments/assets/787e12e2-3735-48b5-9804-ec8c66700b35" />
 <img width="695" height="388" alt="image" src="https://github.com/user-attachments/assets/9f41971b-4a12-4469-b89d-e613c8c279e0" />
----
+
 <!--
 ## 🛠️ Technical Highlights
 
@@ -268,7 +268,7 @@ Search experience on desktop is a **critical failure point**
  ┗ 📂 archive
 ```
 -->
-
+---
 ## ⭐ Final Note
 
 This project showcases the ability to:
