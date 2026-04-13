@@ -224,7 +224,7 @@ Search experience on desktop is a **critical failure point**
 * Simplify navigation between stages
 
 ---
-
+<!--
 ## 🛠️ Technical Highlights
 
 * Advanced DAX:
@@ -250,7 +250,7 @@ Search experience on desktop is a **critical failure point**
  ┣ 📄 README.md
  ┗ 📂 archive
 ```
-
+-->
 
 ## ⭐ Final Note
 
