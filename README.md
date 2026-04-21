@@ -58,7 +58,7 @@ The dataset tracks user progression through a 4-stage funnel:
 
 # 🖥️ Page 1: Funnel Overview                                                                                           
 
-📹[Click here for demo](https://drive.google.com/file/d/1irTu4hUweSle4BlmQ8rk5cOR-OTgH535/view?usp=sharing)
+📹[Click here for demo](https://drive.google.com/file/d/1rpymQ-N4EqJZxy0ITvIZELB1dzPKE-a-/view?usp=sharing)
 
 ## 📌 Objective
 
@@ -96,7 +96,7 @@ Focus optimization efforts on **Search → Payment transition** (pricing clarity
 # 📉 Page 2: Segment Analysis(e.g., Device)
 
 
-📹[Click here for demo](https://drive.google.com/file/d/1h7ZsPsJvkYzYxR_sJSCc8cZCsf06Oq8M/view?usp=sharing)
+📹[Click here for demo](https://drive.google.com/file/d/1OsDgeuGPv27ulS71EX9RNeif9X4MfkEo/view?usp=sharing)
 
 ## 📌 Objective
 Understand how different user segments behave.
@@ -224,7 +224,26 @@ Search experience on desktop is a **critical failure point**
 * Simplify navigation between stages
 
 ---
+## Screenshots
 
+* Funnel Overview:
+<img width="699" height="391" alt="image" src="https://github.com/user-attachments/assets/a46c97ab-06d6-4ff0-8053-19bf7316946d" />
+
+
+* Segment Analysis:
+<img width="698" height="391" alt="image" src="https://github.com/user-attachments/assets/0b47407c-2a9a-4fbd-b114-b253393186d5" />
+
+
+* Time Trends:
+<img width="698" height="392" alt="image" src="https://github.com/user-attachments/assets/4fb425c6-3aea-485e-9587-248c68d2ab4d" />
+
+* Stage Drill-Throughs:
+<img width="695" height="390" alt="image" src="https://github.com/user-attachments/assets/9eaa15d1-beec-402b-8e38-03a496ee576f" />
+<img width="698" height="395" alt="image" src="https://github.com/user-attachments/assets/5a362420-6302-4aa7-b1b7-fa49607733aa" />
+<img width="695" height="391" alt="image" src="https://github.com/user-attachments/assets/787e12e2-3735-48b5-9804-ec8c66700b35" />
+<img width="695" height="388" alt="image" src="https://github.com/user-attachments/assets/9f41971b-4a12-4469-b89d-e613c8c279e0" />
+
+<!--
 ## 🛠️ Technical Highlights
 
 * Advanced DAX:
@@ -250,8 +269,8 @@ Search experience on desktop is a **critical failure point**
  ┣ 📄 README.md
  ┗ 📂 archive
 ```
-
-
+-->
+---
 ## ⭐ Final Note
 
 This project showcases the ability to:
