@@ -227,10 +227,12 @@ Search experience on desktop is a **critical failure point**
 ## Screenshots
 
 * Funnel Overview:
-<img width="698" height="386" alt="image" src="https://github.com/user-attachments/assets/4633863c-d704-48d4-98f3-d281a718dcfc" />
+<img width="699" height="391" alt="image" src="https://github.com/user-attachments/assets/a46c97ab-06d6-4ff0-8053-19bf7316946d" />
+
 
 * Segment Analysis:
-<img width="694" height="392" alt="image" src="https://github.com/user-attachments/assets/e5d68ef9-3334-499a-a730-c1bc471ba9d1" />
+<img width="698" height="391" alt="image" src="https://github.com/user-attachments/assets/0b47407c-2a9a-4fbd-b114-b253393186d5" />
+
 
 * Time Trends:
 <img width="698" height="392" alt="image" src="https://github.com/user-attachments/assets/4fb425c6-3aea-485e-9587-248c68d2ab4d" />
