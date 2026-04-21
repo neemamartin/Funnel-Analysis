@@ -58,7 +58,7 @@ The dataset tracks user progression through a 4-stage funnel:
 
 # 🖥️ Page 1: Funnel Overview                                                                                           
 
-📹[Click here for demo](https://drive.google.com/file/d/1irTu4hUweSle4BlmQ8rk5cOR-OTgH535/view?usp=sharing)
+📹[Click here for demo](https://drive.google.com/file/d/1rpymQ-N4EqJZxy0ITvIZELB1dzPKE-a-/view?usp=sharing)
 
 ## 📌 Objective
 
@@ -96,7 +96,7 @@ Focus optimization efforts on **Search → Payment transition** (pricing clarity
 # 📉 Page 2: Segment Analysis(e.g., Device)
 
 
-📹[Click here for demo](https://drive.google.com/file/d/1h7ZsPsJvkYzYxR_sJSCc8cZCsf06Oq8M/view?usp=sharing)
+📹[Click here for demo](https://drive.google.com/file/d/1OsDgeuGPv27ulS71EX9RNeif9X4MfkEo/view?usp=sharing)
 
 ## 📌 Objective
 Understand how different user segments behave.
