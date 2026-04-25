@@ -1,283 +1,259 @@
-# 📊 Funnel Analysis Dashboard — Portfolio Case Study (Power BI)(Demo Included)
+# 📊 E-Commerce Funnel Analysis Dashboard — Power BI
+
+> A comprehensive funnel analysis dashboard built in Power BI to evaluate user behavior across key stages of a digital e-commerce journey — identifying conversion bottlenecks, quantifying drop-offs, and delivering actionable business insights.
+
+![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
+![DAX](https://img.shields.io/badge/DAX-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
+![Data Modeling](https://img.shields.io/badge/Data%20Modeling-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
 
 ---
 
 ## 🧠 Project Summary
 
-This project is a **comprehensive funnel analysis dashboard** built in Power BI to evaluate user behavior across key stages of a digital journey. The goal is to identify **conversion bottlenecks**, quantify **drop-offs**, and provide **actionable business insights**.
-
 This case study demonstrates:
-
-* Strong **analytical thinking**
-* Practical use of **DAX & data modeling**
-* Ability to translate data into **business decisions**
+- **Strong analytical thinking** — translating raw funnel data into layered business insights
+- **Practical DAX & data modeling** — binary stage flags, RANKX, SELECTEDVALUE, dynamic text measures
+- **Business decision-making** — prioritized recommendations tied directly to measurable funnel outcomes
 
 ---
 
 ## 🎯 Business Problem
 
-Businesses often struggle to understand:
+E-commerce businesses routinely lose revenue at invisible points in their conversion funnel. Without stage-level visibility, optimization is guesswork. This dashboard answers three core questions:
 
-* Where users abandon the journey
-* Which stage impacts revenue the most
-* How different segments behave
-
-Without this clarity, optimizing conversion becomes guesswork.
-
-👉 This dashboard solves that by providing **stage-level visibility and interactive exploration**.
+| Question | Answer Provided |
+|---|---|
+| Where do users drop off? | Stage-by-stage CVR and drop-off % with drill-through |
+| Which segment underperforms? | Device × gender breakdown with contribution % and severity |
+| Is the problem structural or time-bound? | Monthly trend analysis across all stages (Jan–Apr) |
 
 ---
 
-## 📊 Dataset Overview
+## 📁 Dataset Overview
 
-The dataset tracks user progression through a 4-stage funnel:
+**Source:** [E-commerce Website Funnel Analysis — Kaggle](https://www.kaggle.com/)
 
-| Stage   | Description                     |
-| ------- | ------------------------------- |
-| Home    | User lands on platform          |
-| Search  | User explores products/services |
-| Payment | User initiates transaction      |
-| Confirm | Transaction completed           |
+Five CSV tables joined on `user_id`:
+
+| Table | Key Columns | Description |
+|---|---|---|
+| `home_page_table.csv` | user_id, page | Funnel entry point — all users who visited home |
+| `search_page_table.csv` | user_id, page | Users who reached the search/discovery page |
+| `payment_page_table.csv` | user_id, page | Users who initiated a transaction |
+| `payment_confirmation_table.csv` | user_id, page | Users who completed purchase |
+| `user_table.csv` | user_id, date, device, sex | User attributes — primary key for all joins |
 
 ---
 
 ## 🧱 Data Modeling Approach
 
-* Binary flags used for each stage (`visited_home`, `visited_search`, etc.)
-* Funnel progression calculated using **conditional filtering**
-* Measures created for:
+- **Binary stage flags** — `visited_home`, `visited_search`, `visited_payment`, `visited_confirm` for clean conditional filtering
+- **Funnel progression** — calculated by joining each stage table to `user_table` on `user_id`
+- **DAX measures built:** CVR, Drop-off %, Stage Users, Conversion Contribution %, Drop Rank, Drop Severity, Dynamic Insight Text
 
-  * Conversion Rate (CVR)
-  * Drop-off %
-  * Relative performance
+---
+
+## 📊 Key Results
+
+| Metric | Value |
+|---|---|
+| Total Users | 90,000 |
+| Home → Search CVR | 50% |
+| Search → Payment CVR | 13% |
+| Payment → Confirm CVR | 7% |
+| **End-to-End CVR** | **0.50%** |
+| Users who completed journey | 452 |
+
+> 🔴 **Biggest leak:** Search → Payment — 87% of users drop off here
 
 ---
 
 ## 📄 Dashboard Structure
 
+### 🖥️ Page 1 — Funnel Overview
 
-# 🖥️ Page 1: Funnel Overview                                                                                           
+**Objective:** High-level snapshot of user movement across all four stages.
 
-📹[Click here for demo](https://drive.google.com/file/d/1bkrm4R2WzOgc6MKYwK5UiZz8Hc9adbQu/view?usp=sharing)
+**Visuals:**
+- KPI cards — Total Users, Stage CVRs, End-to-End CVR
+- Horizontal bar chart — Users by Stage (90K → 45K → 6K → ~0)
+- Drop-off % bar chart — CVR comparison across stages
+- Dynamic insight card — device-aware DAX text
 
-## 📌 Objective
+**Screenshot:**
 
-Provide a high-level view of user movement across the funnel.
-
-## 📊 Visuals Used
-
-* Funnel Chart
-* KPI Cards (Total Users, Conversion Rate)
-* Stage-wise Drop-off Bars
-
-## 🔢 Key Metrics (Example)
-
-* Total Users: **90,000**
-* Home → Search CVR: **59%**
-* Search → Payment CVR: **17%**
-* Payment → Confirm CVR: **7%**
-* Overall Conversion: **0.70%**
-
-## 💡 Insights
-
-* Largest drop occurs at **Home → Search CVR: 59%**
-* Strong conversion at final stage (Payment → Confirm), indicating:
-
-  * Payment UX is effective
-  * Users with high intent convert successfully
-
-👉 **Business Insight:**
-Focus optimization efforts on **Search → Payment transition** (pricing clarity, CTA placement, trust signals).
-
-
+![Funnel Overview](screenshots/funnel_overview.png)
 
 ---
 
-# 📉 Page 2: Segment Analysis(e.g., Device)
+### 📉 Page 2 — Segment Analysis
 
+**Objective:** Understand how device and gender segments behave across the funnel.
 
-📹[Click here for demo](https://drive.google.com/file/d/1h7ZsPsJvkYzYxR_sJSCc8cZCsf06Oq8M/view?usp=sharing)
+**Visuals:**
+- KPI cards — Blended Mobile CVR (1%), Blended Desktop CVR (0.2%), Device CVR Gap, Segment Snapshot
+- Clustered bar — Stage CVR by Device (Home→Search, Search→Payment, Payment→Confirm)
+- Bar chart — CVR by Gender (Female 0.34% vs Male 0.30%)
 
-## 📌 Objective
-Understand how different user segments behave.
+**Key Finding:** Desktop users contribute ~66% of conversions. Mobile CVR is near zero — device gap is the dominant optimization lever.
 
+**Screenshot:**
 
-## 📊 Visuals Used
-* Stacked Bar Chart
-* Slicers (Device Type)
-
-
-## 🔢 Key Metrics 
-
-| Device  | Conversion Rate |
-| ------- | --------------- |
-| Desktop | 1%             |
-| Mobile  | 0%             |
-
-## 💡 Insights
-
-* Mobile users have **0.8% lead conversion** than desktop
-* Likely performance issue on desktop
-
-
-👉 **Business Action:**
-
-* Optimize desktop UI
-* Improve loading speed
-* Simplify checkout flow
-
+![Segment Analysis](screenshots/segment_analysis.png)
 
 ---
 
-# 📊 Page 3: Time Trend Analysis
+### 📈 Page 3 — Time Trend Analysis
 
-📹[Click here for demo](https://drive.google.com/file/d/1pA2tYrhkKBD-XsCNVobDatSNw-0eFtjh/view?usp=sharing)
+**Objective:** Monitor CVR and drop-off trends monthly (January–April) to separate structural from time-bound problems.
 
-## 📌 Objective
+**Visuals:**
+- Line chart 1 — Monthly drop-off trend by stage (Search, Payment, Confirm)
+- Line chart 2 — Monthly CVR trend by stage transition
+- Device and Gender slicers
 
-Monitor how CVR and drop-off evolve monthly across funnel stages, devices, and gender to separate structural issues from time-bound anomalies.
+**Key Finding:** Payment and Confirm drop-off converges upward from March — a worsening late-stage retention problem.
 
-## 📊 Visuals Used
+**Screenshot:**
 
-*  Two line charts — monthly drop-off trend by stage (Search, Payment, Confirm)
-*  Monthly CVR trend split by Desktop, Mobile, and Daily overall — filtered by Device and Gender slicers.
-
-
-## 🔢 Key Metrics (Example)
-
-* Monthly CVR by device,
-* drop-off rate per stage over time
-* daily CVR as a rolling baseline.
-
-
-## 💡 Insights
-
-* Drop-off at Payment and Confirm converges upward from March onward indicating a worsening late-stage problem.
-* Desktop and Mobile CVR lines are nearly flat at the bottom while Daily CVR trends slightly upward — suggesting overall volume is growing but device-level conversion is not improving proportionally.
-
-👉 **Business Insight:**
-
-* The widening gap between Daily CVR growth and stagnant Desktop/Mobile CVR signals
-
+![Time Trends](screenshots/time_trends.png)
 
 ---
 
-# 🔍 Drill-through Functionality (Key Feature)
+### 🔍 Drill-through Pages — Stage Deep Dive
 
-📹[Click here for demo](https://drive.google.com/file/d/1gk2jXoya_ADs-mmZogvb5l7aXBRYzPHt/view?usp=sharing)
+**Objective:** Click any stage to navigate to a focused breakdown page with segment-level detail.
 
-## 📌 What It Does
+**How it works:**
+1. Drill-through filter applied on `Stage` field
+2. User right-clicks a stage (e.g., Search) → Drill through → Stage Deep Dive
+3. Page opens filtered to that stage with full segment breakdown
 
-Allows users to **click on any stage** and navigate to a **detailed breakdown page**.
+| Stage | Users | Drop-off | Severity | Top Segment |
+|---|---|---|---|---|
+| Home | 90,400 | 50% | Medium | All equal |
+| Search | 45,200 | 87% | High | Desktop Female (25.37%) |
+| Payment | 6,030 | 93% | High | Mobile Female (36.95%) |
+| Confirm | 452 | — | Final | Journey complete |
 
-## ⚙️ How It Works
+**Screenshots:**
 
-* Drill-through filter applied on **Stage field**
-* User clicks on a stage (e.g., Search)
-* Dashboard opens a **focused analysis page**
+| Home | Search |
+|---|---|
+| ![Home Drill](screenshots/drill_home.png) | ![Search Drill](screenshots/drill_search.png) |
 
----
-
-## 🖥️ Drill-through Page: Stage Deep Dive
-
-## 📊 Visuals Used
-
-* Detailed breakdown charts
-* Segment-wise performance
-* KPI comparisons
-
-## 🔢 Example Insight (Search Stage)
-
-* Total Users Entered: **45,000**
-* Users Dropped: **39,000**
-* Drop-off Rate: **87%**
-
-Further breakdown:
-
-* Mobile conversion rate: **20%**
-* Desktop conversion rate: **10%**
-
-## 💡 Insights
-
-* Majority of drop-off driven by **Desktop users**
-* Confirms earlier hypothesis from segment analysis
-
-👉 **Business Insight:**
-Search experience on desktop is a **critical failure point**
+| Payment | Confirm |
+|---|---|
+| ![Payment Drill](screenshots/drill_payment.png) | ![Confirm Drill](screenshots/drill_confirm.png) |
 
 ---
 
-## 🎯 Key Business Takeaways
+## 🔢 Key DAX Measures
 
-1. **Primary Bottleneck:** Search → Payment transition
-2. **High-performing Stage:** Payment → Confirmation
-3. **Critical Segment Issue:** Mobile users
-4. **Opportunity Area:** UX improvements in search & product discovery
+```dax
+-- End-to-end conversion rate
+End-to-End CVR =
+DIVIDE(
+    CALCULATE(SUM(funnel_data[Users]), funnel_data[Stage] = "Confirm"),
+    CALCULATE(SUM(funnel_data[Users]), funnel_data[Stage] = "Home")
+)
+
+-- Segment contribution
+Conversion Contribution % =
+DIVIDE(
+    CALCULATE([Users Converted]),
+    CALCULATE([Users Converted], ALL(funnel_data[device], funnel_data[sex]))
+)
+
+-- Drop rank by device
+Drop_Rank =
+RANKX(ALLSELECTED(funnel_data[device]), CALCULATE([Drop Off Users]),, DESC, DENSE)
+
+-- Dynamic insight text (drill-through aware)
+Dynamic Insight =
+VAR StageName   = SELECTEDVALUE(funnel_data[Stage])
+VAR IsLastStage = StageName = "Confirm"
+VAR DropLevel   =
+    SWITCH(TRUE(),
+        [Drop-off % Stage] > 0.6, "🔴 High drop-off",
+        [Drop-off % Stage] > 0.4, "🟠 Moderate drop-off",
+        "🟢 Low drop-off"
+    )
+RETURN
+    IF(IsLastStage,
+        "✅ Final Stage: " & StageName & UNICHAR(10) &
+        FORMAT([Stage Users], "#,0") & " users completed the journey.",
+        "📍 Stage: " & StageName & "  |  " & FORMAT([Stage Users], "#,0") & " users" & UNICHAR(10) &
+        "📈 CVR to next step: " & FORMAT([CVR Stage], "0.0%") & UNICHAR(10) &
+        DropLevel
+    )
+```
+
+> 💡 **Key fix:** `SELECTEDVALUE()` reads the drill-through filter context directly — replacing `ALL()`/`ALLSELECTED()` which were stripping the page-level filter and returning incorrect values.
 
 ---
 
 ## 🚀 Recommendations
 
-* Improve search relevance & UX
-* Optimize mobile experience
-* Add trust signals before payment
-* Simplify navigation between stages
-
----
-## Screenshots
-
-* Funnel Overview:
-<img width="699" height="391" alt="image" src="https://github.com/user-attachments/assets/a46c97ab-06d6-4ff0-8053-19bf7316946d" />
-
-
-* Segment Analysis:
-<img width="698" height="391" alt="image" src="https://github.com/user-attachments/assets/0b47407c-2a9a-4fbd-b114-b253393186d5" />
-
-
-* Time Trends:
-<img width="698" height="392" alt="image" src="https://github.com/user-attachments/assets/4fb425c6-3aea-485e-9587-248c68d2ab4d" />
-
-* Stage Drill-Throughs:
-<img width="695" height="390" alt="image" src="https://github.com/user-attachments/assets/9eaa15d1-beec-402b-8e38-03a496ee576f" />
-<img width="698" height="395" alt="image" src="https://github.com/user-attachments/assets/5a362420-6302-4aa7-b1b7-fa49607733aa" />
-<img width="695" height="391" alt="image" src="https://github.com/user-attachments/assets/787e12e2-3735-48b5-9804-ec8c66700b35" />
-<img width="695" height="388" alt="image" src="https://github.com/user-attachments/assets/9f41971b-4a12-4469-b89d-e613c8c279e0" />
-
-<!--
-## 🛠️ Technical Highlights
-
-* Advanced DAX:
-
-  * Conversion Rate calculations
-  * Relative CVR comparison
-  * Dynamic KPI visuals
-
-* UX Enhancements:
-
-  * Tooltip insights
-  * Conditional formatting
-  * Interactive drill-through
+| Priority | Area | Action | Impact |
+|---|---|---|---|
+| 🔴 1 | Search → Payment | Improve search relevance, add trust signals, stronger CTAs | High |
+| 🔴 2 | Mobile UX | Simplify checkout, reduce form fields, improve load speed | High |
+| 🟠 3 | Payment → Confirm | Add progress indicators, offer guest checkout | Medium |
+| 🟠 4 | March+ trend | Investigate platform/pricing changes causing late-stage convergence | Medium |
+| 🟢 5 | Onboarding | A/B test first-session flows to improve new-user CVR | Long-term |
 
 ---
 
-
-## 📁 Repository Contents
+## 🗂️ Repository Structure
 
 ```
-📦 funnel-analysis-powerbi
- ┣ 📄 Funnel_Analysis.pbix
- ┣ 📄 README.md
- ┗ 📂 archive
+📦 ecommerce-funnel-analysis
+├── 📁 data/
+│   ├── home_page_table.csv
+│   ├── search_page_table.csv
+│   ├── payment_page_table.csv
+│   ├── payment_confirmation_table.csv
+│   └── user_table.csv
+├── 📁 screenshots/
+│   ├── funnel_overview.png
+│   ├── segment_analysis.png
+│   ├── time_trends.png
+│   ├── drill_home.png
+│   ├── drill_search.png
+│   ├── drill_payment.png
+│   └── drill_confirm.png
+├── 📄 Funnel_Analysis.pbix
+├── 📄 Funnel_Dashboard_Report.docx
+└── 📄 README.md
 ```
--->
----
-## ⭐ Final Note
-
-This project showcases the ability to:
-
-* Translate business problems into data solutions
-* Build interactive dashboards
-* Generate actionable insights from raw data
 
 ---
 
+## ⚙️ How to Use
+
+1. Clone this repository
+2. Open `Funnel_Analysis.pbix` in Power BI Desktop
+3. If prompted, update the data source path to your local `/data/` folder
+4. Refresh the data model
+5. Navigate pages using the bottom tab buttons
+6. Right-click any stage bar to drill through to the Stage Deep Dive page
+
+---
+
+## 🏆 Skills Demonstrated
+
+| Skill | Detail |
+|---|---|
+| **Advanced DAX** | SELECTEDVALUE, RANKX, SUMMARIZE, TOPN, dynamic text generation |
+| **Data Modeling** | Multi-table star schema, binary flags, conditional funnel logic |
+| **Visual Design** | Consistent color coding, KPI cards, drill-through navigation |
+| **Business Insight** | Recommendations prioritized by measurable revenue impact |
+
+---
+
+## 📬 Contact
+
+If you found this project useful or have feedback, feel free to connect!
+
+⭐ **Star this repo** if it helped you build your own funnel analysis dashboard.
