@@ -82,7 +82,7 @@ Five CSV tables joined on `user_id`:
 
 **Screenshot:**
 
-![Funnel Overview](screenshots/funnel_overview.png)
+![Funnel Overview](Funnel_Analysis/screenshots/funnel_overview.png)
 
 ---
 
@@ -99,7 +99,7 @@ Five CSV tables joined on `user_id`:
 
 **Screenshot:**
 
-![Segment Analysis](screenshots/segment_analysis.png)
+![Segment Analysis](Funnel_Analysis/screenshots/segment_analysis.png)
 
 ---
 
@@ -116,7 +116,7 @@ Five CSV tables joined on `user_id`:
 
 **Screenshot:**
 
-![Time Trends](screenshots/time_trends.png)
+![Time Trends](Funnel_Analysis/screenshots/time_trends.png)
 
 ---
 
@@ -140,11 +140,11 @@ Five CSV tables joined on `user_id`:
 
 | Home | Search |
 |---|---|
-| ![Home Drill](screenshots/drill_home.png) | ![Search Drill](screenshots/drill_search.png) |
+| ![Home Drill](Funnel_Analysis/screenshots/drill_home.png) | ![Search Drill](Funnel_Analysis/screenshots/drill_search.png) |
 
 | Payment | Confirm |
 |---|---|
-| ![Payment Drill](screenshots/drill_payment.png) | ![Confirm Drill](screenshots/drill_confirm.png) |
+| ![Payment Drill](Funnel_Analysis/screenshots/drill_payment.png) | ![Confirm Drill](Funnel_Analysis/screenshots/drill_confirm.png) |
 
 ---
 
