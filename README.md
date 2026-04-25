@@ -1,4 +1,6 @@
-# 📊 E-Commerce Funnel Analysis Dashboard — Power BI
+# 📊 E-Commerce Funnel Analysis Dashboard — Power BI ([Demo](https://drive.google.com/file/d/1GeEq1eFiJY8Zt_F4F-rnAPxIUM-3t1qW/view?usp=sharing))
+
+
 
 > A comprehensive funnel analysis dashboard built in Power BI to evaluate user behavior across key stages of a digital e-commerce journey — identifying conversion bottlenecks, quantifying drop-offs, and delivering actionable business insights.
 
