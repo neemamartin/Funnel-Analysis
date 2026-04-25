@@ -204,7 +204,7 @@ RETURN
 | 🟢 5 | Onboarding | A/B test first-session flows to improve new-user CVR | Long-term |
 
 ---
-
+<!--
 ## 🗂️ Repository Structure
 
 ```
@@ -227,7 +227,7 @@ RETURN
 ├── 📄 Funnel_Dashboard_Report.docx
 └── 📄 README.md
 ```
-
+-->
 ---
 
 ## ⚙️ How to Use
