@@ -33,7 +33,7 @@ E-commerce businesses routinely lose revenue at invisible points in their conver
 
 ## 📁 Dataset Overview
 
-**Source:** [E-commerce Website Funnel Analysis — Kaggle](https://www.kaggle.com/)
+**Source:** [E-commerce Website Funnel Analysis — Kaggle](https://www.kaggle.com/datasets/aerodinamicc/ecommerce-website-funnel-analysis?select=home_page_table.csv)
 
 Five CSV tables joined on `user_id`:
 
