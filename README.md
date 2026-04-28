@@ -97,7 +97,7 @@ Five CSV tables joined on `user_id`:
 - Clustered bar — Stage CVR by Device (Home→Search, Search→Payment, Payment→Confirm)
 - Bar chart — CVR by Gender (Female 0.34% vs Male 0.30%)
 
-**Key Finding:** Desktop users contribute ~66% of conversions. Mobile CVR is near zero — device gap is the dominant optimization lever.
+**Key Finding:** Mobile users contribute ~66% of conversions. Desktop CVR is near zero — device gap is the dominant optimization lever.
 
 **Screenshot:**
 
@@ -200,7 +200,7 @@ RETURN
 | Priority | Area | Action | Impact |
 |---|---|---|---|
 | 🔴 1 | Search → Payment | Improve search relevance, add trust signals, stronger CTAs | High |
-| 🔴 2 | Mobile UX | Simplify checkout, reduce form fields, improve load speed | High |
+| 🔴 2 | Desktop UX | Simplify checkout, reduce form fields, improve load speed | High |
 | 🟠 3 | Payment → Confirm | Add progress indicators, offer guest checkout | Medium |
 | 🟠 4 | March+ trend | Investigate platform/pricing changes causing late-stage convergence | Medium |
 | 🟢 5 | Onboarding | A/B test first-session flows to improve new-user CVR | Long-term |
@@ -232,6 +232,7 @@ RETURN
 
 ---
 -->
+<!--
 ## ⚙️ How to Use
 
 1. Clone this repository
@@ -242,7 +243,7 @@ RETURN
 6. Right-click any stage bar to drill through to the Stage Deep Dive page
 
 ---
-
+-->
 ## 🏆 Skills Demonstrated
 
 | Skill | Detail |
